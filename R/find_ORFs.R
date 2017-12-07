@@ -108,18 +108,20 @@ find_in_frame_ORFs <- function(grl, fastaSeqs, startCodon =  "ATG",
 
 #' Creates GRanges with Open Reading Frames from fasta files.
 #'
-#' Each fasta header is treated separately, and name of the sequence will be used as seqname in
-#' returned GRanges object. Frame of the Open Reading Frame is also returned in
-#' metadata column 'frame'.
+#' Each fasta header is treated separately, and name of the sequence will
+#' be used as seqname in returned GRanges object.
+#' Frame of the Open Reading Frame is also
+#' returned in metadata column 'frame'.
 #' @param file - Path to fasta file.
 #' @param startCodon Default is "ATG".
 #' @param stopCodon Default is "TAA|TAG|TGA".
 #' @param longestORF bolean. Default TRUE. Defines whether pick longest ORF only.
 #' When FALSE will report all open reaidng frames, even overlapping small ones.
 #' @param minimumLength numeric. Default is 0.
-#' For example minimumLength = 8 will result in size of ORFs to be at least START + 8*3 [bp] + STOP.
-#' @return A List of GRanges of ORFs mapped to fasta file. Each ORF includes START and STOP codon,
-#' frame, seqname, and strand.
+#' For example minimumLength = 8 will result in size of ORFs
+#'  to be at least START + 8*3 [bp] + STOP.
+#' @return A List of GRanges of ORFs mapped to fasta file.
+#'  Each ORF includes START and STOP codon, frame, seqname, and strand.
 #' @export
 #' @examples
 #' #find_ORFs_fa()

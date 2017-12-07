@@ -5,6 +5,10 @@ ORFs_as_List <- function(fastaSeqs, startCodon, stopCodon, longestORF, minimumLe
     .Call('_ORFik_ORFs_as_List', PACKAGE = 'ORFik', fastaSeqs, startCodon, stopCodon, longestORF, minimumLength)
 }
 
+findORFs_procaryote <- function(file, startCodon, stopCodon, longestORF, minimumLength) {
+    .Call('_ORFik_findORFs_procaryote', PACKAGE = 'ORFik', file, startCodon, stopCodon, longestORF, minimumLength)
+}
+
 orfs_as_IRanges <- function(main_string, s, e, longestORF, minimumLength) {
     .Call('_ORFik_orfs_as_IRanges', PACKAGE = 'ORFik', main_string, s, e, longestORF, minimumLength)
 }

@@ -20,6 +20,21 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// findORFs_procaryote
+S4 findORFs_procaryote(std::string file, std::string startCodon, std::string stopCodon, bool longestORF, int minimumLength);
+RcppExport SEXP _ORFik_findORFs_procaryote(SEXP fileSEXP, SEXP startCodonSEXP, SEXP stopCodonSEXP, SEXP longestORFSEXP, SEXP minimumLengthSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::string >::type file(fileSEXP);
+    Rcpp::traits::input_parameter< std::string >::type startCodon(startCodonSEXP);
+    Rcpp::traits::input_parameter< std::string >::type stopCodon(stopCodonSEXP);
+    Rcpp::traits::input_parameter< bool >::type longestORF(longestORFSEXP);
+    Rcpp::traits::input_parameter< int >::type minimumLength(minimumLengthSEXP);
+    rcpp_result_gen = Rcpp::wrap(findORFs_procaryote(file, startCodon, stopCodon, longestORF, minimumLength));
+    return rcpp_result_gen;
+END_RCPP
+}
 // orfs_as_IRanges
 S4 orfs_as_IRanges(std::string& main_string, std::string s, std::string e, bool longestORF, int minimumLength);
 RcppExport SEXP _ORFik_orfs_as_IRanges(SEXP main_stringSEXP, SEXP sSEXP, SEXP eSEXP, SEXP longestORFSEXP, SEXP minimumLengthSEXP) {
@@ -38,6 +53,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_ORFik_ORFs_as_List", (DL_FUNC) &_ORFik_ORFs_as_List, 5},
+    {"_ORFik_findORFs_procaryote", (DL_FUNC) &_ORFik_findORFs_procaryote, 5},
     {"_ORFik_orfs_as_IRanges", (DL_FUNC) &_ORFik_orfs_as_IRanges, 5},
     {NULL, NULL, 0}
 };

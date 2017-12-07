@@ -4,7 +4,7 @@
 \alias{find_ORFs_fa}
 \title{Creates GRanges with Open Reading Frames from fasta files.}
 \usage{
-find_ORFs_fa(file, startCodon = c("ATG"), stopCodon = c("TAA|TAG|TGA"),
+find_ORFs_fa(file, startCodon = "ATG", stopCodon = "TAA|TAG|TGA",
   longestORF = T, minimumLength = 0)
 }
 \arguments{
